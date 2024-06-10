@@ -1,16 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <!--<link rel="stylesheet" href="style.css">-->
+    <meta charset="utf-8">
+    <title>Web Programming for Systems Programmers</title>
+    <link rel="stylesheet" href="third_party/highlight/styles/default.min.css">
+    <script src="third_party/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
   </head>
   <body>
 <h1>Javacript DOM Manipulation Functions</h1>
 <ul>
-  <li>const link = document.querySelector("a");</li>
+  <li><pre><code class="language-javascript">const link = document.querySelector("a");
+link.textContent = "Mozilla Developer Network";
+link.href = "https://developer.mozilla.org";</code></pre></li>
+  <li><pre><code class="language-javascript">const elementRef = document.getElementById('myId')</code></pre></li>
+  <li><pre><code class="language-javascript">const table = document.getElementById("forecast-table");
+const cells = table.getElementsByTagName("td");
+
+for (const cell of cells) {
+  const status = cell.getAttribute("data-status");
+  if (status === "open") {
+    // Grab the data
+  }
+}</code></pre></li>
+  <li><pre><code class="language-javascript">const sect = document.querySelector("section");
+const para = document.createElement("p");
+para.textContent = "We hope you enjoyed the ride.";
+sect.appendChild(para);
+const text = document.createTextNode(
+  " — the premier source for web development knowledge.",
+);
+const linkPara = document.querySelector("p");
+linkPara.appendChild(text);</code></pre></li>
+  <li><pre><code class="language-javascript">const linkPara = document.querySelector("p");
+linkPara.remove();</code></pre></li>
+  <li><pre><code class="language-javascript">const para = document.querySelector("p");
+para.style.color = "white";
+para.style.backgroundColor = "black";
+para.style.padding = "10px";
+para.style.width = "250px";
+para.style.textAlign = "center";</code></pre></li>
+  <li><pre><code class="language-css"><style>.highlight {
+  color: white;
+  background-color: black;
+  padding: 10px;
+  width: 250px;
+  text-align: center;
+}</style></code>
+  <code class="language-javascript">const para = document.querySelector("p");
+para.setAttribute("class", "highlight");</code></pre></li>
+</ul>
+
+<h1>CSS Selectors</h1>
+
+<h2>Type Selectors</h2>
+<ul>
+  <li><pre><code class="language-css">h1 {
+  color: blue;
+}</code></pre></li>
+</ul>
+<h2>Class Selectors</h2>
+<ul>
+  <li><pre><code class="language-css">/* All elements with class="spacious" */
+.spacious {
+  margin: 2em;
+}</code></pre></li>
+  <li><pre><code class="language-css">/* All li elements with class="spacious" */
+li.spacious {
+  margin: 2em;
+}</code></pre></li>
+  <li><pre><code class="language-css">/* All li elements with a class list that includes both "spacious" and "elegant" */
+/* For example, class="elegant retro spacious" */
+li.spacious.elegant {
+  margin: 2em;
+}</code></pre></li>
 </ul>
   </body>
 </html>
